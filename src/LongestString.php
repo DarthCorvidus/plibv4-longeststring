@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * @copyright (c) 2021, Claus-Christoph Küthe
+ * @author Claus-Christoph Küthe <plibv4@vm01.telton.de>
+ * @license LGPLv2.1
+ */
 class LongestString {
 	private $length = 0;
 	private $encoding = "UTF-8";
