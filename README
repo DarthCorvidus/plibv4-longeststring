@@ -1,0 +1,8 @@
+LongestString to measure the longest string out of a bunch.
+
+LongestString comes in quite handy when you want to do formatting with
+monospaced fonts such as the output of a CLI application. You'll need it, trust
+me on this one.
+LongestString uses mbstring to determine the string length, so you'll get the
+character length according to the encoding used for a string and not its length
+as a binary string.
