@@ -30,6 +30,19 @@ class LongestString {
 	}
 	
 	/**
+	 * Add an array of strings
+	 * 
+	 * Keeps you from writing foreach if you already have an array of strings of
+	 * which you want to have the longest one.
+	 * @param array $array
+	 */
+	function addArray(array $array) {
+		foreach($array as $value) {
+			$this->addString($value);
+		}
+	}
+	
+	/**
 	 * Return highest lenght
 	 * 
 	 * Returns the highest length, which defaults to 0, if no string was added.

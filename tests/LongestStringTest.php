@@ -52,5 +52,12 @@ class LongestStringTest extends TestCase {
 		$longest->addString(119);
 		$this->assertEquals(3, $longest->getLength());
 	}
+	
+	function testAddArray() {
+		$longest = new LongestString();
+		$longest->addArray(array("Dog", "Cat", "Mouse"));
+		$this->assertEquals(5, $longest->getLength());
+		
+	}
 
 }
