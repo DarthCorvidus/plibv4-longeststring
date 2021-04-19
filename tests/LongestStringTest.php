@@ -7,11 +7,22 @@ use PHPUnit\Framework\TestCase;
  * @license LGPLv2.1
  */
 class LongestStringTest extends TestCase {
+	/**
+	 * Test Unused
+	 * 
+	 * Newly initiated LongestString has a longest length of 0.
+	 */
 	function testUnused() {
 		$longest = new LongestString();
 		$this->assertEquals(0, $longest->getLength());
 	}
-	
+
+	/**
+	 * Test UTF8 ASCII
+	 * 
+	 * Test for longest length (Crow, 4) with three strings that do not leave
+	 * the boundaries of ASCII.
+	 */
 	function testUtfAScii() {
 		$longest = new LongestString();
 		$longest->addString("Dog");
@@ -20,6 +31,12 @@ class LongestStringTest extends TestCase {
 		$this->assertEquals(4, $longest->getLength());
 	}
 	
+	/**
+	 * Test UTF8
+	 * 
+	 * Correctly identify „Aaskrähe“, the german word for corvus corrone corrone
+	 * with a length of 8 characters.
+	 */
 	function testUtf() {
 		$longest = new LongestString();
 		$longest->addString("Hund");
@@ -28,6 +45,12 @@ class LongestStringTest extends TestCase {
 		$this->assertEquals(8, $longest->getLength());
 	}
 
+	/**
+	 * Test Latin1
+	 * 
+	 * Test for Aaskrähe (as UTF8!) with ISO-8859-1 as encoding instead, which
+	 * yields a character count of 9 instead of 8.
+	 */
 	function testLatin1() {
 		$longest = new LongestString("iso-8859-1");
 		$longest->addString("Hund");
@@ -37,6 +60,11 @@ class LongestStringTest extends TestCase {
 		$this->assertEquals(9, $longest->getLength());
 	}
 
+	/**
+	 * Test Float
+	 * 
+	 * Test if a float is treated correctly as a string.
+	 */
 	function testFloat() {
 		$longest = new LongestString();
 		$longest->addString(1.0);
@@ -45,6 +73,11 @@ class LongestStringTest extends TestCase {
 		$this->assertEquals(7, $longest->getLength());
 	}
 
+	/**
+	 * Test int
+	 * 
+	 * Test Int instead of string and identify the longest length.
+	 */
 	function testInt() {
 		$longest = new LongestString();
 		$longest->addString(1);
@@ -53,11 +86,14 @@ class LongestStringTest extends TestCase {
 		$this->assertEquals(3, $longest->getLength());
 	}
 	
+	/**
+	 * Test add array
+	 * 
+	 * Add an array of strings and identify the longest one (Mouse, 5).
+	 */
 	function testAddArray() {
 		$longest = new LongestString();
 		$longest->addArray(array("Dog", "Cat", "Mouse"));
 		$this->assertEquals(5, $longest->getLength());
-		
 	}
-
 }

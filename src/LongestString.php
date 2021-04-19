@@ -4,6 +4,13 @@
  * @author Claus-Christoph Küthe <plibv4@vm01.telton.de>
  * @license LGPLv2.1
  */
+
+/**
+ * LongestString
+ * 
+ * The purpose of LongestString is to be given string after string and keeping
+ * track of the max length. Practical for output with monospaced fonts.
+ */
 class LongestString {
 	private $length = 0;
 	private $encoding = "UTF-8";

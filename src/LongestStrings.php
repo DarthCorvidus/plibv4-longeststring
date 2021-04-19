@@ -4,6 +4,13 @@
  * @author Claus-Christoph Küthe <plibv4@vm01.telton.de>
  * @license LGPLv2.1
  */
+
+/**
+ * LongestStrings
+ * 
+ * Just a simple collection of LongestString instances, having columns in mind
+ * for which track of the widest string has to be kept.
+ */
 class LongestStrings {
 	private $items = array();
 	private $encoding = "UTF-8";
