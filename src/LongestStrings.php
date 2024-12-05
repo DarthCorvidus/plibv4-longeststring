@@ -12,17 +12,18 @@
  * for which track of the widest string has to be kept.
  */
 class LongestStrings {
-	private $items = array();
-	private $encoding = "UTF-8";
+	/** @var list<LongestString> */
+	private array $items = array();
+	private string $encoding = "UTF-8";
 	/**
 	 * 
-	 * @param type $predefined Instantiate n instances of LongestString
-	 * @param type $encoding
+	 * @param int $predefined Instantiate n instances of LongestString
+	 * @param string $encoding
 	 */
 	function __construct($predefined = 0, $encoding = "UTF-8") {
 		$this->encoding = $encoding;
 		for($i=0;$i<$predefined;$i++) {
-			$this->items[$i] = new LongestString($this->encoding);
+			$this->items[] = new LongestString($this->encoding);
 		}
 	}
 	
@@ -32,7 +33,7 @@ class LongestStrings {
 	 * Adds another LongestString item.
 	 * @param LongestString $item
 	 */
-	function addItem(LongestString $item) {
+	function addItem(LongestString $item): void {
 		$this->items[] = $item;
 	}
 	
@@ -40,9 +41,9 @@ class LongestStrings {
 	 * Add array of items
 	 * 
 	 * Add an array of LongestString instances.
-	 * @param array $items
+	 * @param list<LongestString> $items
 	 */
-	function addItems(array $items) {
+	function addItems(array $items): void {
 		#No array_merge, to take advantage of PHP's type hinting.
 		foreach($items as $value) {
 			$this->addItem($value);
