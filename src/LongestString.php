@@ -5,6 +5,8 @@
  * @license LGPLv2.1
  */
 
+namespace plibv4\longeststring;
+
 /**
  * LongestString
  * 

@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
+namespace plibv4\longeststring;
 use PHPUnit\Framework\TestCase;
+use OutOfBoundsException;
 /**
  * @copyright (c) 2021, Claus-Christoph Küthe
  * @author Claus-Christoph Küthe <plibv4@vm01.telton.de>
