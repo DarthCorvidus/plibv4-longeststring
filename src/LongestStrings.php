@@ -16,16 +16,14 @@ use OutOfBoundsException;
 final class LongestStrings {
 	/** @var list<LongestString> */
 	private array $items = array();
-	private string $encoding = "UTF-8";
 	/**
 	 * 
 	 * @param int $predefined Instantiate n instances of LongestString
 	 * @param string $encoding
 	 */
 	function __construct($predefined = 0, $encoding = "UTF-8") {
-		$this->encoding = $encoding;
 		for($i=0;$i<$predefined;$i++) {
-			$this->items[] = new LongestString($this->encoding);
+			$this->items[] = new LongestString($encoding);
 		}
 	}
 	
