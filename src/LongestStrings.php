@@ -13,7 +13,7 @@ use OutOfBoundsException;
  * Just a simple collection of LongestString instances, having columns in mind
  * for which track of the widest string has to be kept.
  */
-class LongestStrings {
+final class LongestStrings {
 	/** @var list<LongestString> */
 	private array $items = array();
 	private string $encoding = "UTF-8";

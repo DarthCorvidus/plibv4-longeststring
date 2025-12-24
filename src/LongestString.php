@@ -13,7 +13,7 @@ namespace plibv4\longeststring;
  * The purpose of LongestString is to be given string after string and keeping
  * track of the max length. Practical for output with monospaced fonts.
  */
-class LongestString {
+final class LongestString {
 	private int $length = 0;
 	private string $encoding = "UTF-8";
 	/**
