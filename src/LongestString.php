@@ -43,7 +43,6 @@ final class LongestString {
 	 * 
 	 * Keeps you from writing foreach if you already have an array of strings of
 	 * which you want to have the longest one.
-	 * @psalm-suppress PossiblyUnusedMethod
 	 * @param list<string> $array
 	 */
 	function addArray(array $array): void {
@@ -53,10 +52,9 @@ final class LongestString {
 	}
 	
 	/**
-	 * Return highest lenght
+	 * Return highest length
 	 * 
 	 * Returns the highest length, which defaults to 0, if no string was added.
-	 * @psalm-suppress PossiblyUnusedMethod
 	 * @return int
 	 */
 	function getLength(): int {
